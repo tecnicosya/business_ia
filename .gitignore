@@ -1,0 +1,108 @@
+# Visual Studio / .NET
+*.sln.ide/
+*.suo
+*.sdf
+*.user
+*.userosscache
+*.sln.docstates
+*.dotCover
+bin/
+obj/
+Debug/
+Release/
+[Bb]uild/
+[Dd]eployment/
+*.manifest
+*.log
+*.vs/
+_ReSharper.*/
+*.resharper
+*.ReSharper.user
+JetBrains.*
+[Tt]est[Rr]esults/
+[Tt]est[Rr]esults*
+
+# NuGet packages
+packages/
+*.nupkg
+!packages.config
+!packages/
+build/*.nuget.props
+build/*.nuget.targets
+
+# VSTO/Office
+*.vsto
+*.bootstrapper
+*.application
+app.publish
+*.msi
+*.msm
+*.msp
+*.cab
+ClickOnce/
+
+# Visual Studio project specific
+*.vbproj.user
+*.csproj.user
+*.vcxproj.user
+*.dbproj.user
+*.dbml.layout
+*.dbml
+[Dd]ata[Cc]onnections
+*.cache
+[Tt]emporary[Aa]sp[Ff]iles/
+*.publish.xml
+
+# Corrected typo for the whole file tree:
+packages/
+Build/
+[bB]in/
+[Oo]bj/
+
+# SQLite databases
+*.db
+*.sqlite
+
+# Temp files
+*~
+*.tmp
+*.swp
+*.swo
+*.bak
+~$*
+*.vsdx
+*.vsss
+*.vscode/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Certificate files
+*.pfx
+*.snk
+*.cer
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# VSTO specific
+*.dll.manifest
+*.vsto
+*.application
+*.manifest
+app.publish/
+Publish/

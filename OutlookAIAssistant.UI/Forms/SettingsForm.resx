@@ -1,0 +1,27 @@
+<root>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+                id="SettingsForm">
+        <xsd:element name="SettingsForm" msdata:IsDataSet="true">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="SettingsFormData" minOccurs="0" maxOccurs="unbounded">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="Key" type="xsd:string" minOccurs="0" />
+                                <xsd:element name="Value" type="xsd:string" minOccurs="0" />
+                            </xsd:sequence>
+                        </xsd:complexType>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter</resheader>
+    <metadata name="SettingsForm.TrayLargeIcon" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+        <value>False</value>
+    </metadata>
+</root>
