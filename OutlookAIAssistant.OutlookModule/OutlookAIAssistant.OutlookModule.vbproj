@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C3D4E5F6-A7B8-9012-CDEF-123456789012}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>OutlookAIAssistant.OutlookModule</RootNamespace>
+    <AssemblyName>OutlookAIAssistant.OutlookModule</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <MyType>ClassLibrary</MyType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>OutlookAIAssistant.OutlookModule.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>OutlookAIAssistant.OutlookModule.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>On</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <VSTO_TrustAssembliesLocation>true</VSTO_TrustAssembliesLocation>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Outlook, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Office, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OutlookAIAssistant.Core\OutlookAIAssistant.Core.vbproj">
+      <Project>{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}</Project>
+      <Name>OutlookAIAssistant.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OutlookAIAssistant.AIEngine\OutlookAIAssistant.AIEngine.vbproj">
+      <Project>{B2C3D4E5-F6A7-8901-BCDE-F12345678901}</Project>
+      <Name>OutlookAIAssistant.AIEngine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OutlookAIAssistant.Rules\OutlookAIAssistant.Rules.vbproj">
+      <Project>{D4E5F6A7-B8C9-0123-DEF1-234567890123}</Project>
+      <Name>OutlookAIAssistant.Rules</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OutlookAIAssistant.Security\OutlookAIAssistant.Security.vbproj">
+      <Project>{E5F6A7B8-C9D0-1234-EF12-345678901234}</Project>
+      <Name>OutlookAIAssistant.Security</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.Office.Interop.Outlook" />
+    <Import Include="System" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ThisAddIn.vb" />
+    <Compile Include="ThisAddIn.Designer.vb">
+      <DependentUpon>ThisAddIn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ribbon.vb" />
+    <Compile Include="Ribbon.Designer.vb">
+      <DependentUpon>Ribbon.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EventHandlers\ItemAddHandler.vb" />
+    <Compile Include="EventHandlers\NewInspectorHandler.vb" />
+    <Compile Include="EventHandlers\ItemSendHandler.vb" />
+    <Compile Include="EventHandlers\ItemChangeHandler.vb" />
+    <Compile Include="Sidebar\AISidebarWpf.xaml.vb">
+      <DependentUpon>AISidebarWpf.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sidebar\SidebarViewModel.vb" />
+    <Compile Include="Sidebar\SidebarManager.vb" />
+    <Compile Include="TaskPane\TaskPaneManager.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Sidebar\AISidebarWpf.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Ribbon.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>

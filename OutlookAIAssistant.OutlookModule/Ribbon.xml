@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui" onLoad="Ribbon_Load">
+    <ribbon>
+        <tabs>
+            <tab id="tabOutlookAIAssistant" label="AI Assistant">
+                <group id="groupSmartActions" label="Smart Actions">
+                    <button id="btnSummarize" label="Summarize" size="large"
+                            imageMso="ReviewSpellingGrammar"
+                            screentip="Summarize selected email"
+                            supertip="Use AI to generate a concise summary of the selected email."
+                            onAction="OnSummarizeClick" />
+                    <button id="btnReply" label="Draft Reply" size="large"
+                            imageMso="ReplyMessage"
+                            screentip="Draft AI reply"
+                            supertip="Let AI draft a professional reply to the selected email."
+                            onAction="OnReplyClick" />
+                </group>
+                <group id="groupClassification" label="Classification">
+                    <button id="btnClassify" label="Categorize" size="large"
+                            imageMso="Organize"
+                            screentip="Categorize email"
+                            supertip="Use AI to categorize and prioritize this email."
+                            onAction="OnClassifyClick" />
+                    <button id="btnTranslate" label="Translate" size="large"
+                            imageMso="Translate"
+                            screentip="Translate email"
+                            supertip="Translate the selected email to another language."
+                            onAction="OnTranslateClick" />
+                </group>
+                <group id="groupCompose" label="Compose">
+                    <button id="btnProofread" label="Proofread" size="large"
+                            imageMso="Spelling"
+                            screentip="Proofread text"
+                            supertip="Check and fix grammar and spelling."
+                            onAction="OnProofreadClick" />
+                    <button id="btnSmartReply" label="Smart Reply" size="large"
+                            imageMso="ReplyAllMessage"
+                            screentip="Smart reply suggestions"
+                            supertip="Get quick AI-generated reply suggestions."
+                            onAction="OnSmartReplyClick" />
+                </group>
+                <group id="groupSettings" label="Settings">
+                    <button id="btnSettings" label="Settings" size="large"
+                            imageMso="Options"
+                            screentip="AI Assistant Settings"
+                            supertip="Configure AI providers, rules, licensing, and privacy settings."
+                            onAction="OnSettingsClick" />
+                    <button id="btnToggleSidebar" label="Sidebar" size="large"
+                            imageMso="SidebarShowHide"
+                            screentip="Toggle AI sidebar"
+                            supertip="Show or hide the AI Assistant sidebar."
+                            onAction="OnToggleSidebarClick" />
+                </group>
+            </tab>
+        </tabs>
+    </ribbon>
+</customUI>

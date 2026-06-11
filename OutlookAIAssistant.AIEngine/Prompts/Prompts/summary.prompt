@@ -1,0 +1,4 @@
+Namespace OutlookAIAssistant.AIEngine.Prompts.Prompts
+    ' Placeholder for .prompt files directory
+    ' Custom AI prompt templates go here
+End Namespace
