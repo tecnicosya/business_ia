@@ -45,6 +45,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="System.Data.SQLite">
+      <Version>1.0.118</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OutlookAIAssistant.Core\OutlookAIAssistant.Core.vbproj">
+      <Project>{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}</Project>
+      <Name>OutlookAIAssistant.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <Import Include="System" />
     <Import Include="System.Collections.Generic" />
     <Import Include="System.Linq" />
@@ -54,6 +68,8 @@
     <Compile Include="Encryption\DPAPIEncryption.vb" />
     <Compile Include="Licensing\LicenseManager.vb" />
     <Compile Include="Privacy\PrivacyManager.vb" />
+    <Compile Include="Analytics\AnalyticsService.vb" />
+    <Compile Include="Data\DatabaseHelper.vb" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

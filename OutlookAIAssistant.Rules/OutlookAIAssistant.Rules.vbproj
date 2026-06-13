@@ -48,6 +48,15 @@
       <Project>{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}</Project>
       <Name>OutlookAIAssistant.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\OutlookAIAssistant.AIEngine\OutlookAIAssistant.AIEngine.vbproj">
+      <Project>{B2C3D4E5-F6A7-8901-BCDE-F12345678901}</Project>
+      <Name>OutlookAIAssistant.AIEngine</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.3</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Import Include="System" />
@@ -60,6 +69,8 @@
     <Compile Include="Rule.vb" />
     <Compile Include="TemplateEngine.vb" />
     <Compile Include="Templates\SupportTemplate.vb" />
+    <Compile Include="Templates\SalesTemplate.vb" />
+    <Compile Include="Templates\GeneralAcknowledgmentTemplate.vb" />
     <Compile Include="AutomationPipeline.vb" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

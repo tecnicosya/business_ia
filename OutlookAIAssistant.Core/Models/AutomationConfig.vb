@@ -4,6 +4,7 @@ Namespace OutlookAIAssistant.Core.Models
 
     ''' <summary>
     ''' Configuration for an automation level, wrapping the enum with additional metadata.
+    ''' Maps to the four business plan automation modes.
     ''' </summary>
     Public Class AutomationConfig
         ''' <summary>The automation level.</summary>
@@ -34,37 +35,37 @@ Namespace OutlookAIAssistant.Core.Models
                     Return New AutomationConfig With {
                         .Level = level,
                         .DisplayName = "Manual",
-                        .Description = "Everything requires manual approval",
+                        .Description = "User clicks button -> AI generates -> User reviews -> User sends",
                         .EnableAutoReply = False,
                         .EnableAutoCategorize = False,
                         .EnableAutoSummarize = False,
                         .EnableAutoRules = False
                     }
-                Case Enums.AutomationLevel.Suggestions
+                Case Enums.AutomationLevel.AutomaticDraft, Enums.AutomationLevel.Suggestions
                     Return New AutomationConfig With {
                         .Level = level,
-                        .DisplayName = "Suggestions",
-                        .Description = "AI suggests actions, user approves",
-                        .EnableAutoReply = False,
-                        .EnableAutoCategorize = True,
-                        .EnableAutoSummarize = True,
-                        .EnableAutoRules = False
-                    }
-                Case Enums.AutomationLevel.Partial
-                    Return New AutomationConfig With {
-                        .Level = level,
-                        .DisplayName = "Partial Automation",
-                        .Description = "Auto-categorize and summarize known senders",
+                        .DisplayName = "Automatic Draft",
+                        .Description = "Email received -> AI generates draft -> Draft appears in Drafts folder",
                         .EnableAutoReply = False,
                         .EnableAutoCategorize = True,
                         .EnableAutoSummarize = True,
                         .EnableAutoRules = True
                     }
-                Case Enums.AutomationLevel.Full
+                Case Enums.AutomationLevel.Supervised, Enums.AutomationLevel.Partial
                     Return New AutomationConfig With {
                         .Level = level,
-                        .DisplayName = "Full Automation",
-                        .Description = "Fully automated processing with AI replies",
+                        .DisplayName = "Supervised",
+                        .Description = "Email received -> AI generates -> Requires user approval -> Sends",
+                        .EnableAutoReply = False,
+                        .EnableAutoCategorize = True,
+                        .EnableAutoSummarize = True,
+                        .EnableAutoRules = True
+                    }
+                Case Enums.AutomationLevel.Automatic, Enums.AutomationLevel.Full
+                    Return New AutomationConfig With {
+                        .Level = level,
+                        .DisplayName = "Automatic",
+                        .Description = "Email received -> AI generates -> Sends directly (TrustScore >= 95%)",
                         .EnableAutoReply = True,
                         .EnableAutoCategorize = True,
                         .EnableAutoSummarize = True,
