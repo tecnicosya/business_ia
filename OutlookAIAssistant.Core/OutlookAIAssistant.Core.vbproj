@@ -71,6 +71,7 @@
     <Compile Include="Models\Classification.vb" />
     <Compile Include="Models\AutomationConfig.vb" />
     <Compile Include="Models\TrustScore.vb" />
+    <Compile Include="Models\RuleModels.vb" />
     <Compile Include="Models\ProviderConfig.vb" />
     <Compile Include="Models\PrivacyMode.vb" />
     <Compile Include="Enums\ClassificationType.vb" />
